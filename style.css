@@ -86,7 +86,7 @@ nav{
 
 /*hero section*/
 .hero-content{
-    background-image: url(Assets/hero\ pic\ V2.jpg);
+    background-image: url(Assets/hero\ pic.jpg);
      height: 90vh;
     width: 100%;
     background-size: cover;
@@ -98,10 +98,21 @@ nav{
     justify-content: center;
 }
 
-.hero-content {
+.hero-content{
       padding-bottom: 5px;
-      color: var(--secondary-color);
+      color:#ffff;
+      
 }
+
+.hero-content h1{
+font-weight: 700;
+}
+
+.hero-content p{
+    font-weight: 600;
+}
+
+
 
 
 .hero-content .btn{
