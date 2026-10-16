@@ -1,29 +1,30 @@
 import { useState } from 'react'
-import About from './components/About'
-import Books from './components/Books'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import Hero from './components/Hero'
+import MainContent from './components/MainContent'
 
 function App() {
-  // Quantities live here so the header cart badge and the book cards stay in sync
+  // State lives here so the header cart badge and the book cards stay in sync
   const [quantities, setQuantities] = useState({})
+  const [favourites, setFavourites] = useState({})
 
   const handleQuantityChange = (id, next) =>
     setQuantities((prev) => ({ ...prev, [id]: Math.max(0, next) }))
+
+  const handleFavouriteChange = (id, next) =>
+    setFavourites((prev) => ({ ...prev, [id]: next }))
 
   const cartCount = Object.values(quantities).reduce((sum, n) => sum + n, 0)
 
   return (
     <>
       <Header cartCount={cartCount} />
-      <main>
-        <Hero />
-        <Books quantities={quantities} onQuantityChange={handleQuantityChange} />
-        <About />
-        <Contact />
-      </main>
+      <MainContent
+        quantities={quantities}
+        onQuantityChange={handleQuantityChange}
+        favourites={favourites}
+        onFavouriteChange={handleFavouriteChange}
+      />
       <Footer />
     </>
   )
