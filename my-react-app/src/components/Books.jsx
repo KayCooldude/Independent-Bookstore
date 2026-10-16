@@ -4,7 +4,7 @@ import BookCard from './BookCard'
 import Reveal from './Reveal'
 import SectionTitle from './SectionTitle'
 
-export default function Books({ quantities, onQuantityChange }) {
+export default function Books({ quantities, onQuantityChange, favourites, onFavouriteChange }) {
   const [category, setCategory] = useState('All')
 
   const visibleBooks =
@@ -50,6 +50,8 @@ export default function Books({ quantities, onQuantityChange }) {
               book={book}
               quantity={quantities[book.id] ?? 0}
               onQuantityChange={(next) => onQuantityChange(book.id, next)}
+              favourite={favourites[book.id] ?? false}
+              onFavouriteChange={(next) => onFavouriteChange(book.id, next)}
             />
           </Reveal>
         ))}

@@ -1,16 +1,23 @@
+import FavouriteToggle from './FavouriteToggle'
 import QuantityStepper from './QuantityStepper'
 
 const formatPrice = (amount) => `R${amount.toLocaleString('en-ZA')}`
 
-export default function BookCard({ book, quantity, onQuantityChange }) {
+export default function BookCard({ book, quantity, onQuantityChange, favourite, onFavouriteChange }) {
   return (
     <article className="group flex h-full flex-col rounded-xl bg-card p-4 text-center shadow-md transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-      <div className="mb-4 overflow-hidden rounded-lg">
+      <div className="relative mb-4 overflow-hidden rounded-lg">
         <img
           src={book.image}
           alt={book.alt}
           loading="lazy"
           className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-80"
+        />
+        <FavouriteToggle
+          pressed={favourite}
+          onChange={onFavouriteChange}
+          label={book.title}
+          className="absolute right-3 top-3"
         />
       </div>
 
