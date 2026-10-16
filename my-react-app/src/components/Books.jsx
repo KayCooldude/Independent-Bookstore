@@ -45,7 +45,7 @@ export default function Books({ quantities, onQuantityChange }) {
       {/* key={category} remounts the grid so the cards animate in again after each filter change */}
       <div key={category} className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {visibleBooks.map((book, index) => (
-          <Reveal key={book.id} delay={(index % 3) * 120}>
+          <Reveal key={book.id} delay={(index % 3) * 120} className="h-full">
             <BookCard
               book={book}
               quantity={quantities[book.id] ?? 0}
