@@ -1,11 +1,6 @@
 import { navLinks } from '../data/navLinks'
+import { socials } from '../data/socials'
 import Reveal from './Reveal'
-
-const socials = [
-  { label: 'Facebook', icon: 'ri-facebook-circle-fill' },
-  { label: 'Twitter', icon: 'ri-twitter-fill' },
-  { label: 'Instagram', icon: 'ri-instagram-fill' },
-]
 
 export default function Footer() {
   return (
@@ -27,7 +22,7 @@ export default function Footer() {
           {socials.map((social) => (
             <a
               key={social.label}
-              href="#"
+              href={social.href}
               aria-label={social.label}
               className="grid h-10 w-10 place-items-center rounded-full border border-muted/60 text-xl transition duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary"
             >
