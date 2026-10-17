@@ -3,7 +3,7 @@ export default function Hero() {
     <section id="home" className="relative isolate flex min-h-[85vh] scroll-mt-16 items-center overflow-hidden text-white">
       {/* Slow Ken Burns zoom on the background photo */}
       <img
-        src="/images/hero.webp"
+        src={`${import.meta.env.BASE_URL}images/hero.webp`}
         alt=""
         fetchPriority="high"
         className="absolute inset-0 -z-20 h-full w-full animate-ken-burns object-cover object-[75%_25%] motion-reduce:animate-none"

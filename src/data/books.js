@@ -1,9 +1,6 @@
 // All featured books live here. To add a book, add an object to this array –
 // the grid, the category filter and the cart all pick it up automatically.
-//
-// NOTE: the first three books are the original listings. The last three are
-// placeholder titles/prices added so the category filter has something to
-// filter – edit or replace them with your real stock.
+  const img = (file) => `${import.meta.env.BASE_URL}images/${file}`
 export const books = [
   {
     id: 'gatsby',
