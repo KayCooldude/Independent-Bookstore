@@ -9,7 +9,7 @@ export default function About() {
       <Reveal>
         <div className="group mx-auto mb-8 max-w-3xl overflow-hidden rounded-xl shadow-lg">
           <img
-            src="/images/group-reading.webp"
+            src={`${import.meta.env.BASE_URL}images/group-reading.webp`}
             alt="A group of people reading together"
             loading="lazy"
             className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-80 lg:h-96"
